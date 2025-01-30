@@ -1,20 +1,13 @@
-
-
 # Constant Runtime
 def OddorEven(n):
     return "Even" if n % 2 else "Odd"
 
-
 import time
-
 start = time.time()
 
-
-for x in range(1,10000):
-    retval = OddorEven(x)
+retval = OddorEven(5)
 
 end = time.time()
-
 print(f"OddOrEven: {(end - start):.10f}")
 
 
@@ -36,13 +29,12 @@ def binarySearch(alist, item):
 
     return found
 
-a = [1, 2, 3, 4, 5, 6 , 7, 8, 9, 10]
+import random
 
+b = list(range(1,99999))
 start = time.time()
 
-
-for x in range(1,10000):
-    retval = binarySearch(a, 2)
+retval = binarySearch(b, 2)
 
 end = time.time()
 
@@ -58,7 +50,8 @@ def findmax(a):
         if item > max_item:
             max_item = item
 
-a = [2, 16, 7, 9, 8, 23, 12]
+a = list(range(1, 9999))
+random.shuffle(a)
 
 start = time.time()
 
@@ -88,11 +81,12 @@ def bubbleSort(arr):
                 arr[j], arr[j+1] = arr[j+1], arr[j]
 
 
-arr = [64, 34, 25, 12, 22, 11, 90]
+# arr = [64, 34, 25, 12, 22, 11, 90]
+arr = list(range(1,999999))
+random.shuffle(arr)
 
 start = time.time()
-for x in range(1,100000):
-    output = bubbleSort(arr)
+output = bubbleSort(a)
 
 end = time.time()
 
@@ -108,8 +102,7 @@ def subsets(iterable):
     return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 
 start = time.time()
-for x in range(1,30000):
-    output = subsets(range(1,x))
+output = subsets(range(1,99999999))
 end = time.time()
 
 print(f"find all subsets: {(end - start):.10f}")
