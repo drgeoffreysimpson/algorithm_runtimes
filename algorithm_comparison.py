@@ -108,11 +108,12 @@ def subsets(iterable):
     return chain.from_iterable(combinations(s, r) for r in range(len(s)+1))
 
 start = time.time()
-
 for x in range(1,30000):
-    output = subsets(list(range(1,x)))
-
+    output = subsets(range(1,x))
 end = time.time()
 
-print(f"all subsets: {(end - start):.10f}")
+print(f"find all subsets: {(end - start):.10f}")
+
+
+# for each, add data and/or executions and graph the results
 
